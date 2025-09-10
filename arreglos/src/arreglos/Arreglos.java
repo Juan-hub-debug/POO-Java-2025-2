@@ -1,12 +1,12 @@
-package condicionales;
+package arreglos;
 
 /**
  *
  * @author Juan José Chacón Cruz u20251233255
  */
-public class Listas {
+public class Arreglos {
 
-    public static void main(String[] args) {
+public static void main(String[] args) {
         int[] vector = generaArrayInt(5, 1, 6);
         muestraArrayInt(vector);
         int valorMin = minimoArrayInt(vector);
