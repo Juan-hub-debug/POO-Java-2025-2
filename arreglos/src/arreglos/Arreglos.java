@@ -1,12 +1,14 @@
 package arreglos;
 
+import java.util.Arrays;
+
 /**
  *
  * @author Juan José Chacón Cruz u20251233255
  */
 public class Arreglos {
 
-public static void main(String[] args) {
+    public static void main(String[] args) {
         int[] vector = generaArrayInt(5, 1, 6);
         muestraArrayInt(vector);
         int valorMin = minimoArrayInt(vector);
@@ -20,6 +22,9 @@ public static void main(String[] args) {
         } else {
         }
         posicionEnArrayInt(vector, 4);
+        
+        int[] resultado = volteaArrayInt(vector);
+        System.out.println(Arrays.toString(resultado));
     }
 
     public static int[] generaArrayInt(int n, int min, int max) {
@@ -63,7 +68,7 @@ public static void main(String[] args) {
         for (int x = 0; x < vector.length; x++) {
             suma = suma + vector[x];
         }
-        double media = suma / vector.length;
+        double media = (double) (suma) / vector.length;
         return media;
     }
 
@@ -77,9 +82,9 @@ public static void main(String[] args) {
         System.out.println("El número: " + existeNumero + " NO está en el arreglo");
         return false;
     }
-    
-    public static int posicionEnArrayInt(int[] vector, int valor) { 
-        for (int f = 0; f < vector.length; f++){
+
+    public static int posicionEnArrayInt(int[] vector, int valor) {
+        for (int f = 0; f < vector.length; f++) {
             if (vector[f] == valor) {
                 System.out.println("El número " + valor + " está en el índice: " + f);
                 return f;
@@ -87,5 +92,14 @@ public static void main(String[] args) {
         }
         System.out.println("El número " + valor + " NO está en el arreglo");
         return -1;
+    }
+
+    public static int[] volteaArrayInt(int[] vector) {
+        int[] invertido = new int[vector.length];
+        
+        for (int z = 0; z < vector.length; z++) {
+            invertido[z] = vector[vector.length - 1 - z];
+        }
+        return invertido;
     }
 }
